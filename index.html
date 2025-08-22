@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>To-Do Web App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>To-Do Web App</h1>
+      <p class="muted">Add tasks, set date & time, edit, complete, and organize.</p>
+    </header>
+
+    <section class="creator">
+      <input id="taskText" type="text" placeholder="What do you need to do?" />
+      <input id="taskDate" type="date" />
+      <input id="taskTime" type="time" />
+      <button id="addBtn">Add Task</button>
+    </section>
+
+    <section class="toolbar">
+      <select id="filter">
+        <option value="all">All</option>
+        <option value="active">Active</option>
+        <option value="completed">Completed</option>
+        <option value="today">Due Today</option>
+      </select>
+      <button id="clearCompleted">Clear Completed</button>
+    </section>
+
+    <ul id="list" class="list" aria-live="polite"></ul>
+
+    <footer class="footer">
+      <small>Tasks are saved automatically in your browser.</small>
+    </footer>
+  </main>
+
+  <template id="itemTemplate">
+    <li class="item">
+      <label class="left">
+        <input class="toggle" type="checkbox" />
+        <span class="title"></span>
+        <time class="due"></time>
+      </label>
+      <div class="right">
+        <button class="edit" title="Edit">Edit</button>
+        <button class="save hidden" title="Save">Save</button>
+        <button class="delete" title="Delete">Delete</button>
+      </div>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
